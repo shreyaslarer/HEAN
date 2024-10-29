@@ -1,0 +1,1478 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    line-height: 1.6;
+    color: black;
+    background-color: #FEF3E4;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FEF3E4;
+    padding: 10px 20px;
+    color: black;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    width: 60px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.header-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.language-selector {
+    padding: 5px;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+}
+.language-selector:hover{
+    background-color: #333;
+}
+
+.auth-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.auth-btn.signup {
+    background-color: #333;
+}
+
+.auth-btn:hover {
+    background-color: #555;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #FEF3E4;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .header-options .language-selector,
+    .header-options .auth-btn {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+        color: black;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 100px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    /* background: #FEF3E4 url('images/hero-image.jpg')  no-repeat center/cover; */
+    padding: 100px 20px;
+    /* background-image: url('images/hero-image.jpg'); */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    
+}
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+.hero-img {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+    color: white;
+    background-color: black;
+}
+
+.btn:hover {
+    background-color: #797777;
+}
+
+/* Key Features Overview */
+.features {
+    padding: 50px 20px;
+    background-color: #FEF3E4;
+    text-align: center;
+}
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.feature-card1 {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature-card2 {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-left: 100px;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+
+.feature-card3 {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-left: 100px;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+
+.feature-card4 {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-left: 100px;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.about p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #FEF3E4;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-icon {
+        display: flex;
+    }
+    .feature-cards {
+        flex-direction: column;
+    }
+}
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .hero {
+        padding: 60px 20px;
+    }
+    .feature-card {
+        max-width: 100%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FEF3E4;
+}
+
+.footer {
+    background-color: #FEF3E4;
+    color: black;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 0.9em;
+    color: black;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #555;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section .social-media a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-bottom p {
+    font-size: 0.8em;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 15px 0;
+        text-align: center;
+    }
+}
+
+.map-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #FEF3E4; /* Consistent with your color scheme */
+}
+
+.map-section h2 {
+    text-align: center;
+}
+
+
+/* Chatbot Styles */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chatbot-toggle {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chatbot-window {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chatbot-message {
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 80%;
+    font-size: 14px;
+}
+
+.chatbot-message.user {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+}
+
+.chatbot-message.bot {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.chatbot-input {
+    display: flex;
+    padding: 10px;
+    gap: 5px;
+    border-top: 1px solid #ddd;
+}
+
+.chatbot-input input {
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+.chatbot-input button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.info-box {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    flex: 1; /* Allow the info box to take available space */
+}
+
+.image-container {
+    margin-left: 1300px; 
+    flex-shrink: 0;
+    margin-bottom: 40px;
+    display: flex;
+    align-items:flex-end; 
+}
+
+.responsive-image {
+    max-width: 200px; /* Limit the width of the image */
+    height: auto;
+    display: flex; /* Maintain aspect ratio */
+}
+
+.feature-section{
+    margin-left:20px;
+}
+
+
+/* Discussion Board Styling */
+.discussion-topic {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.join-btn {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.join-btn:hover {
+    background-color: #555;
+}
+
+/* Discussion Panel Styling */
+.discussion-panel {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: #FEF3E4;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.chat-box {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.chat-box p {
+    margin: 0.5rem 0;
+}
+
+input[type="text"] {
+    width: calc(100% - 60px); /* Leaves space for the Send button */
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Forum Section */
+.forum-section {
+    padding: 2rem;
+    background-color: #FEF3E4; /* Use the existing HEAN background color */
+    color: #333;
+}
+
+.forum-section h2, .forum-section h3, .forum-section h4 {
+    font-family: Arial, sans-serif;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+/* Discussion Boards */
+.discussion-boards, .support-groups, .post-sharing, .posts-section {
+    margin-bottom: 2rem;
+}
+
+.discussion-topic, .support-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.discussion-topic img, .support-group img {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    margin-right: 1rem;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.discussion-topic h4, .support-group h4 {
+    font-size: 1.2rem;
+    color: #444;
+    margin: 0;
+}
+
+/* Post Sharing */
+.post-sharing {
+    text-align: center;
+}
+
+.post-sharing textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.post-sharing button {
+    padding: 0.5rem 1rem;
+    background-color: #333; /* Maintain HEAN button color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.post-sharing button:hover {
+    background-color: #555;
+}
+
+/* Posts Section */
+.posts-section {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-post {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.user-post p {
+    margin: 0 0 0.5rem;
+}
+
+.user-post button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.user-post .like-count {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Comments */
+.comment-section {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid #ddd;
+}
+
+.comment {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FEF3E4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Educational Resources Section */
+.education-resources-area {
+    background-color: #FEF3E4; /* Background color */
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.education-resources-area h2 {
+    font-size: 2.5em;
+    color: #333; /* Dark text color */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.resources-library {
+    margin-bottom: 30px;
+}
+
+.resources-library h3 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.resource-item {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space between items */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-img {
+    width: 120px; /* Fixed width for the image */
+    height: 120px; /* Fixed height for the image */
+    border-radius: 5px; /* Rounded corners for the image */
+    object-fit: cover; /* Cover the area without stretching */
+    margin-right: 15px; /* Space between image and text */
+}
+
+.resource-info {
+    flex-grow: 1; /* Allow the info section to grow */
+}
+
+.resource-info h4 {
+    font-size: 1.5em;
+    color: #000000; /* Primary link color */
+    margin: 0 0 5px 0;
+}
+
+.resource-info p {
+    color: #666; /* Lighter text color */
+    margin: 0;
+}
+
+/* Upcoming Webinars Section */
+.upcoming-webinars {
+    background-color: #FEF3E4; /* Light background to match the theme */
+    padding: 20px; /* Space around the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Space below the section */
+}
+
+.upcoming-webinars h3 {
+    font-size: 24px; /* Font size for heading */
+    color: #333; /* Darker text color for contrast */
+    margin-bottom: 15px; /* Space below heading */
+}
+
+#webinar-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+#webinar-list li {
+    font-size: 18px; /* Font size for list items */
+    color: #555; /* Grey text color */
+    margin: 10px 0; /* Space between list items */
+    padding: 10px; /* Space inside each item */
+    border-left: 4px solid #000000; /* Left border to add visual interest */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+#webinar-list li:hover {
+    background-color: #757575; /* Light orange background on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.register-button {
+    background-color: #000000; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Space inside button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+    margin-top: 15px; /* Space above button */
+}
+
+.register-button:hover {
+    background-color: #7d7d7d; /* Darker orange on hover */
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 600px) {
+    .upcoming-webinars h3 {
+        font-size: 20px; /* Smaller heading on small screens */
+    }
+    #webinar-list li {
+        font-size: 16px; /* Smaller list items on small screens */
+    }
+    .register-button {
+        font-size: 14px; /* Smaller button text on small screens */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resource-item {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .resource-img {
+        margin-bottom: 10px; /* Space below image */
+    }
+
+    .resource-search-area input {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+    padding-top: 60px; /* Location of the box */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Width of modal image */
+    max-width: 700px; /* Maximum width */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    height: 40px; /* Space for caption */
+}
+
+.resource-search-area {
+    margin: 20px 0;
+}
+
+.resource-search-area form {
+    display: flex;
+    gap: 10px; /* Space between input and button */
+}
+
+.resource-search-area input {
+    flex: 1; /* Allow input to take full width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.resource-search-area button {
+    padding: 10px 20px;
+    background-color: #000000; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.resource-search-area button:hover {
+    background-color: #5b5c5d; /* Darker blue on hover */
+}
+
+/* Trending Resources Section */
+.trending-resources {
+    background-color: #FEF3E4; /* Light background to match the theme */
+    padding: 20px; /* Space around the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Space below the section */
+}
+
+.trending-resources h3 {
+    font-size: 24px; /* Font size for heading */
+    color: #333; /* Darker text color for contrast */
+    margin-bottom: 15px; /* Space below heading */
+}
+
+#trending-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+#trending-list li {
+    font-size: 18px; /* Font size for list items */
+    color: #555; /* Grey text color */
+    margin: 10px 0; /* Space between list items */
+    padding: 10px; /* Space inside each item */
+    border-left: 4px solid #FFA500; /* Left border to add visual interest */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+#trending-list li:hover {
+    background-color: #FFE0B2; /* Light orange background on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 600px) {
+    .trending-resources h3 {
+        font-size: 20px; /* Smaller heading on small screens */
+    }
+    #trending-list li {
+        font-size: 16px; /* Smaller list items on small screens */
+    }
+}
+
+/* Emergency Health Alerts Section */
+.emergency-alerts-area {
+    background-color: #FEF3E4; /* Background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.emergency-alerts-area h2 {
+    text-align: center;
+    color: #333; /* Header color */
+    margin-bottom: 15px;
+}
+
+.alert-item {
+    display: flex;
+    flex-direction: column; /* Vertical alignment */
+    background-color: #fff; /* Alert item background */
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.alert-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.alert-item img {
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-height: 200px; /* Limit maximum height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.alert-item h4 {
+    color: #000000; /* Alert title color */
+    margin: 0;
+}
+
+.alert-item p {
+    color: #555; /* Alert description color */
+    margin: 5px 0;
+}
+
+.notification-settings {
+    background-color: #fff; /* Notification settings background */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.notification-settings h3 {
+    color: #333; /* Settings header color */
+    margin-bottom: 10px;
+}
+
+.notification-settings label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333; /* Label color */
+}
+
+.notification-settings input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.register-button {
+    background-color: #000000; /* Button color */
+    color: #fff; /* Button text color */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #747271; /* Darker button color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .emergency-alerts-area {
+        padding: 15px;
+    }
+
+    .alert-item {
+        padding: 10px;
+    }
+}
+
+/* Health Risk Information Section */
+.health-risk-info {
+    background-color: #FEF3E4; /* Background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    text-align: center; /* Center the text */
+}
+
+.health-risk-info h3 {
+    color: #333; /* Header color */
+    margin-bottom: 15px;
+}
+
+.health-risk-info img {
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-height: 250px; /* Limit maximum height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.health-risk-info p {
+    color: #555; /* Paragraph color */
+    margin-bottom: 15px;
+}
+
+.health-risk-info ul {
+    list-style-type: disc; /* Use bullet points */
+    padding-left: 20px; /* Indentation for list items */
+    text-align: left; /* Align text to the left */
+}
+
+.health-risk-info li {
+    color: #333; /* List item color */
+    margin-bottom: 8px; /* Space between list items */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .health-risk-info {
+        padding: 15px;
+    }
+
+    .health-risk-info img {
+        max-height: 200px; /* Adjust image height for smaller screens */
+    }
+}
+
+/* Customizable Notifications Section */
+.custom-notifications {
+    background-color: #FEF3E4; /* Background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.custom-notifications h3 {
+    color: #333; /* Header color */
+    margin-bottom: 15px;
+    text-align: center; /* Center the header */
+}
+
+.custom-notifications form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Space between form elements */
+}
+
+.custom-notifications label {
+    color: #555; /* Label color */
+    font-weight: bold; /* Bold labels for better readability */
+}
+
+.custom-notifications select,
+.custom-notifications input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border for input fields */
+    border-radius: 5px;
+    font-size: 16px; /* Font size for better readability */
+}
+
+.custom-notifications button {
+    padding: 10px;
+    background-color: #000000; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Pointer on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.custom-notifications button:hover {
+    background-color: #676767; /* Darker shade on hover */
+}
+
+.notification-result {
+    margin-top: 15px;
+    color: #333; /* Result text color */
+    font-weight: bold; /* Bold result text */
+    text-align: center; /* Centered result text */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .custom-notifications {
+        padding: 15px;
+    }
+
+    .custom-notifications select,
+    .custom-notifications input[type="text"],
+    .custom-notifications button {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Font for the entire page */
+    line-height: 1.6; /* Line height for better readability */
+    background-color: #FAFAFA; /* Light background color */
+}
+
+/* Feature Sections */
+.feature-section {
+    background-color: #FEF3E4; /* Section background color */
+    border: 1px solid #E3B57B; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside sections */
+    margin: 20px 0; /* Space between sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Section Headers */
+.feature-section h2 {
+    color: #333; /* Dark color for section headers */
+    margin-bottom: 15px; /* Space below headers */
+    text-align: center; /* Center the headers */
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px; /* Padding for buttons */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Primary Button */
+.primary-btn {
+    background-color: #000000; /* Background color */
+    color: white; /* Text color */
+}
+
+.primary-btn:hover {
+    background-color: #6b6b6b; /* Darker shade on hover */
+}
+
+/* Share Button */
+.share-btn {
+    background-color: #000000; /* Share button color */
+    color: white; /* Text color */
+}
+
+.share-btn:hover {
+    background-color: #6a6a6a; /* Darker shade on hover */
+}
+
+/* Info Boxes */
+.info-box {
+    background-color: #FFFFFF; /* Background for info boxes */
+    border: 1px solid #D1D1D1; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside boxes */
+    margin: 10px 0; /* Space between boxes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Prescription Management */
+#prescription-management h4 {
+    margin-bottom: 10px; /* Space below the h4 */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .feature-section {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .btn {
+        font-size: 14px; /* Smaller font size */
+        padding: 8px 16px; /* Smaller padding */
+    }
+}
+
+.caregiver-dashboard {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.caregiver-dashboard h2 {
+    margin-bottom: 20px;
+}
+
+.caregiver-dashboard h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.caregiver-dashboard ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.caregiver-dashboard li {
+    background: #eef;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: #000000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #6d6d6d;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+h3 {
+    color: #555;
+}
+
+/* Caregiver Access Section */
+.caregiver-access-section {
+    background-color: #FEF3E4;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.feature-image {
+    width: 100%; /* Make images responsive */
+    max-width: 400px; /* Limit the maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.profile-header, .dashboard-header, .permissions-header {
+    margin-top: 15px;
+}
+
+.toggle-label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.profile-status, .privacy-message {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Buttons */
+.btn {
+    background-color: #000000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #6d6d6d;
+}
+
+/* Caregiver Dashboard Section */
+.caregiver-dashboard {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#dashboard-content h3 {
+    margin-top: 20px;
+}
+
+#dashboard-content ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0;
+}
+
+#dashboard-content li {
+    background: #eef;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Close button */
+.close-button {
+    background-color: #000000;
+}
+
+.close-button:hover {
+    background-color: #787878;
+}
+
+/* General Styling for the Feedback Section */
+.feedback-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Centering the section */
+    margin: 0 auto; /* Centering the section horizontally */
+}
+
+/* Title Styling */
+.section-title {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Individual Section Styling */
+.rating-section, .feedback-form-section, .admin-panel {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+.rating-header, .feedback-header, .admin-header {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #000000; /* Primary color for headers */
+}
+
+/* Input and Select Field Styling */
+.input-field, .rating-select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Button Styling */
+.submit-button, .admin-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em; /* Adjusting font size */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Button Hover Effects */
+.submit-button:hover, .admin-button:hover {
+    background-color: #606060;
+}
+
+/* Result Message Styling */
+.result-message {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #333; /* Color for result messages */
+}
+
+/* Flexbox for Admin Panel */
+.admin-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering content */
+}
+
+.admin-feedback-list {
+    margin-top: 15px;
+    width: 100%; /* Full width for feedback list */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8; /* Light background for feedback list */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .feedback-section {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .rating-header, .feedback-header, .admin-header {
+        font-size: 1.3em;
+    }
+
+    .submit-button, .admin-button {
+        padding: 8px;
+    }
+}
+

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEAN - AI-Enhanced Health Equity and Accessibility Network</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8gDkud-080-xaEABNalRcuRDeJ_NF7Es&libraries=places" async defer></script>
+
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="logo">
+        <img src="images/hean-logo.png" alt="HEAN Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="healthconnect.html">Health Connect</a>
+        <a href="#resources">Resources</a>
+    </nav>
+    <div class="header-options">
+        <select class="language-selector" aria-label="Select language">
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="fr">FR</option>
+        </select>
+        <button class="auth-btn" id="loginBtn">Login</button>
+        <button class="auth-btn signup" id="signupBtn">Sign Up</button>
+    </div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>AI-Enhanced Health Equity and Accessibility Network (HEAN)</h1>
+        <p>Bridging the Healthcare Gap with AI-Powered Accessibility</p>
+    
+        <div class="cta-buttons">
+            <a href="dashboard.html" class="btn primary-btn">Create Your Health Profile</a>
+            <button class="btn secondary-btn" id="findServicesBtn">Find Local Health Services</button>
+        </div>
+
+        
+    </div>
+</section>
+
+<!-- Key Features Overview -->
+<section id="products" class="features">
+    <h2>Our Key Features</h2>
+    <br>
+    <div class="feature-cards">
+        <div class="feature-card1">
+            <img src="images/feature1.jpg" alt="AI-Powered Data Analysis" width="100px">
+            <h3>AI-Powered Data Analysis</h3>
+            <p>Leverage AI to analyze community health data and predict areas of need.</p>
+        </div>
+        <div class="feature-card2">
+            <img src="images/feature2.jpg" alt="Community Health Dashboards" width="100px">
+            <h3>Community Health Dashboards</h3>
+            <p>Separate dashboards for community leaders and healthcare providers.</p>
+        </div>
+        <div class="feature-card3">
+            <img src="images/feature3.jpg" alt="Nearby Health Care Service" width="100px">
+            <h3>Find Your Nearby Health Care Service</h3>
+            <p>Includes telehealth access, local clinics, transportation services, social support networks.</p>
+        </div>
+        <div class="feature-card4">
+            <img src="images/feature4.jpg" alt="Emergency Health Alerts" width="100px">
+            <h3>Emergency Health Alerts</h3>
+            <p>Sends alerts about emergencies in the community.</p>
+        </div>
+    </div>
+</section>
+<hr><br>
+<section id="health-tracking" class="feature-section">
+    <h2>Enable Health Tracking</h2>
+    
+    <button class="btn primary-btn" onclick="enableHealthTracking()">Enable Health Tracking</button>
+</section>
+
+<section id="nearby-alerts" class="feature-section">
+    <h2>Nearby Health Risk Alerts</h2>
+    <div id="alert-info" class="info-box"></div>
+    <button class="btn share-btn" onclick="shareAlerts()">Share Alerts</button>
+
+</section><br>
+<hr>
+<br>
+<section id="telehealth" class="feature-section">
+    <h2>Telehealth Services</h2>
+
+    <h3>Virtual Consultation Booking</h3>
+    <button class="btn primary-btn" onclick="bookConsultation()">Book a Consultation</button><br>
+    <h3>Healthcare Professional Directory</h3>
+    <div id="provider-directory" class="info-box"></div>
+
+    <!-- <h3>Video Call Interface</h3>
+    <div id="video-call-interface" style="display:none;">
+        <h4>Start a Video Call</h4>
+        <button class="btn primary-btn" onclick="startVideoCall()">Join Video Call</button>
+    </div> -->
+<br>
+    <h3>Prescription Management</h3>
+    <div id="prescription-management" class="info-box">
+        <h4>Your Past Prescriptions</h4>
+        <div id="prescriptions-list"></div>
+        <button class="btn primary-btn" onclick="requestPrescriptionRenewal()">Request Prescription Renewal</button>
+    </div>
+</section>
+<!-- Main Community Forum Section -->
+<section class="forum-section">
+    <h2>Community Forums and Support Groups</h2>
+
+    <!-- Separate Discussion Boards -->
+    <div class="discussion-boards">
+        <div class="discussion-topic">
+            <img src="images/mental_health.jpg" alt="Mental Health">
+            <div>
+                <h4>Mental Health Support</h4>
+                <button class="join-btn" onclick="openDiscussionPanel('mental-health')">Join Discussion</button>
+            </div>
+        </div>
+        <div class="discussion-topic">
+            <img src="images/chronic_disease.jpg" alt="Chronic Disease">
+            <div>
+                <h4>Chronic Disease Support</h4>
+                <button class="join-btn" onclick="openDiscussionPanel('chronic-disease')">Join Discussion</button>
+            </div>
+        </div>
+        <div class="discussion-topic">
+            <img src="images/parent-support.jpg" alt="Parent Support">
+            <div>
+                <h4>Parent Support Group</h4>
+                <button class="join-btn" onclick="openDiscussionPanel('parent-support')">Join Discussion</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Chat Panels for each discussion topic -->
+<div class="discussion-panel" id="mental-health-panel">
+    <h3>Mental Health Discussion</h3>
+    <div class="chat-box" id="mental-health-chat"></div>
+    <input type="text" id="mental-health-message" placeholder="Type your message here...">
+    <button onclick="sendMessage('mental-health')">Send</button>
+    <button onclick="closeDiscussionPanel('mental-health')">Close</button>
+</div>
+
+<div class="discussion-panel" id="chronic-disease-panel">
+    <h3>Chronic Disease Discussion</h3>
+    <div class="chat-box" id="chronic-disease-chat"></div>
+    <input type="text" id="chronic-disease-message" placeholder="Type your message here...">
+    <button onclick="sendMessage('chronic-disease')">Send</button>
+    <button onclick="closeDiscussionPanel('chronic-disease')">Close</button>
+</div>
+
+<div class="discussion-panel" id="parent-support-panel">
+    <h3>Parent Support Group Discussion</h3>
+    <div class="chat-box" id="parent-support-chat"></div>
+    <input type="text" id="parent-support-message" placeholder="Type your message here...">
+    <button onclick="sendMessage('parent-support')">Send</button>
+    <button onclick="closeDiscussionPanel('parent-support')">Close</button>
+</div>
+
+<!-- Educational Resources Section -->
+<section class="education-resources-area">
+    <h2>Educational Resources</h2>
+
+    <!-- Resource Library -->
+    <div class="resources-library">
+        <h3>Resource Library</h3>
+        <div class="resource-item" onclick="openModal('images/resource1.jpg')">
+            <img src="images/resource1.jpg" alt="Resource 1" class="resource-img">
+            <div class="resource-info">
+                <h4>Understanding Mental Health</h4>
+                <p>A comprehensive article on mental health awareness.</p>
+            </div>
+        </div>
+        <div class="resource-item" onclick="openModal('images/resource2.png')">
+            <img src="images/resource2.png" alt="Resource 2" class="resource-img">
+            <div class="resource-info">
+                <h4>Nutrition for Chronic Diseases</h4>
+                <p>Webinar discussing the role of nutrition in managing chronic diseases.</p>
+            </div>
+        </div>
+        <div class="resource-item" onclick="openModal('images/resource3.jpg')">
+            <img src="images/resource3.jpg" alt="Resource 3" class="resource-img">
+            <div class="resource-info">
+                <h4>Parenting Tips for Healthy Kids</h4>
+                <p>Video series on parenting strategies for promoting health.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Image Display -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Modal Image">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Trending Topics -->
+    <div class="trending-resources">
+        <h3>Trending Topics</h3>
+        <ul id="trending-list">
+            <li>1. Mental Health Awareness Month</li>
+            <li>2. Nutrition and Wellness</li>
+            <li>3. Chronic Pain Management</li>
+        </ul>
+    </div>
+<!-- Resource Search -->
+<div class="resource-search-area">
+    <h3>Search Resources</h3>
+    <form id="search-form" onsubmit="performSearch(event)">
+        <input type="text" id="resource-search" placeholder="Search resources..." required>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<script>
+    // Function to perform Google search
+    function performSearch(event) {
+        event.preventDefault(); // Prevent form submission
+        const query = document.getElementById("resource-search").value;
+        const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        window.open(googleSearchURL, '_blank'); // Open results in a new tab
+    }
+</script>
+
+    <!-- Webinars and Live Events -->
+    <div class="upcoming-webinars">
+        <h3>Upcoming Webinars and Live Events</h3>
+        <ul id="webinar-list">
+            <li>Webinar on Mental Health - <strong>Date:</strong> Nov 10, 2024</li>
+            <li>Nutrition Workshop - <strong>Date:</strong> Nov 15, 2024</li>
+            <li>Chronic Illness Support Group - <strong>Date:</strong> Nov 20, 2024</li>
+        </ul>
+        <button class="register-button" onclick="registerForWebinar()">Register</button>
+    </div>
+</section>
+
+<!-- Emergency Health Alerts Section -->
+<section class="emergency-alerts-area">
+    <h2>Emergency Health Alerts</h2>
+
+    <!-- Real-Time Alerts -->
+    <div class="real-time-alerts">
+        <h3>Real-Time Alerts</h3>
+        <div class="alert-item">
+            <img src="images/alert1.jpg" alt="Alert Image 1" class="alert-img">
+            <p>Outbreak of flu reported in multiple regions. Stay informed!</p>
+        </div>
+        <div class="alert-item">
+            <img src="images/alert2.jpg" alt="Alert Image 2" class="alert-img">
+            <p>Air quality warning: High levels of pollution detected.</p>
+        </div>
+        <div class="alert-item">
+            <img src="images/alert3.jpg" alt="Alert Image 3" class="alert-img">
+            <p>New environmental hazard reported in your area. Check local updates.</p>
+        </div>
+    </div>
+
+    <!-- Customizable Notifications -->
+    <div class="custom-notifications">
+        <h3>Customizable Notifications</h3>
+        <form id="notification-settings">
+            <label for="notification-type">Choose notification method:</label>
+            <select id="notification-type">
+                <option value="sms">SMS</option>
+                <option value="email">Email</option>
+                <option value="app">App Notifications</option>
+            </select>
+            <label for="user-number">Enter your contact number or email:</label>
+            <input type="text" id="user-contact" placeholder="Your contact info">
+            <button type="button" onclick="saveNotificationSettings()">Save Settings</button>
+        </form>
+        <div id="notification-result" class="notification-result"></div>
+    </div>
+
+    <!-- Health Risk Information -->
+    <div class="health-risk-info">
+        <h3>Health Risk Information</h3>
+        <img src="images/health_risk.jpg" alt="Health Risk Information" class="risk-img">
+        <p>Stay informed about health risks. Learn how to protect yourself and your loved ones during emergencies.</p>
+        <ul>
+            <li>Guidelines for dealing with outbreaks.</li>
+            <li>Emergency contact numbers and resources.</li>
+            <li>First aid tips and health advice.</li>
+        </ul>
+    </div>
+</section>
+<!-- Family and Caregiver Access Section -->
+<section id="family-caregiver-access" class="caregiver-access-section">
+    <h2 class="access-title">Family and Caregiver Access</h2>
+
+    <!-- Shared Profiles -->
+    <div class="shared-profile-settings">
+        <h3 class="profile-header">Shared Profiles</h3>
+        <img src="images/shared-profile-image.jpg" alt="Shared Profile" class="feature-image">
+        <label class="toggle-label" for="profile-sharing">Enable Profile Sharing:</label>
+        <input type="checkbox" class="profile-sharing-checkbox" id="profile-sharing" onchange="toggleProfileSharing()">
+        <p class="profile-status" id="profile-status">Profile sharing is disabled.</p>
+    </div>
+
+    <!-- Caregiver Dashboard -->
+    <div class="caregiver-dashboard-section">
+        <h3 class="dashboard-header">Caregiver Dashboard</h3>
+        <img src="images/caregiver-dashboard-image.jpg" alt="Caregiver Dashboard" class="feature-image">
+        <p class="dashboard-description">Access the dashboard to monitor and assist in health management:</p>
+        <button class="btn dashboard-button" onclick="openCaregiverDashboard()">Open Dashboard</button>
+    </div>
+
+    <!-- Permissions & Privacy Settings -->
+    <div class="privacy-settings-section">
+        <h3 class="permissions-header">Permissions & Privacy Settings</h3>
+        <img src="images/privacy-settings-image.jpg" alt="Privacy Settings" class="feature-image">
+        <label class="access-label" for="access-level">Select Access Level:</label>
+        <select id="access-level" class="access-select">
+            <option value="view">View Only</option>
+            <option value="edit">Edit</option>
+            <option value="none">No Access</option>
+        </select>
+        <button class="btn save-button" onclick="saveAccessLevel()">Save Settings</button>
+        <p class="privacy-message" id="privacy-message"></p>
+    </div>
+</section>
+
+<!-- Caregiver Dashboard Section -->
+<section id="caregiver-dashboard" class="caregiver-dashboard" style="display: none;">
+    <h2>Caregiver Dashboard</h2>
+    <div id="dashboard-content">
+        <h3>Patient Overview</h3>
+        <ul id="patient-list">
+            <li>Patient 1: John Doe - <strong>Status:</strong> Stable</li>
+            <li>Patient 2: Jane Smith - <strong>Status:</strong> Needs Attention</li>
+            <li>Patient 3: Mike Johnson - <strong>Status:</strong> Critical</li>
+        </ul>
+
+        <h3>Medication Reminders</h3>
+        <ul id="medication-reminders">
+            <li>John Doe: Take Medication A at 9 AM</li>
+            <li>Jane Smith: Take Medication B at 10 AM</li>
+        </ul>
+
+        <h3>Upcoming Appointments</h3>
+        <ul id="appointment-list">
+            <li>John Doe - Doctor's Visit on Nov 5, 2024</li>
+            <li>Jane Smith - Therapy Session on Nov 10, 2024</li>
+        </ul>
+    </div>
+    <button class="btn close-button" onclick="closeCaregiverDashboard()">Close Dashboard</button>
+</section>
+<!-- Feedback and Rating System Section -->
+<section id="feedback-rating" class="feedback-section">
+    <h2 class="section-title">Feedback and Rating System</h2>
+
+    <!-- Rating Section for Healthcare Services -->
+    <div class="rating-section">
+        <h3 class="rating-header">Rate Our Healthcare Services</h3>
+        <img src="images/rating_image.jpg" alt="Rate Us" class="feature-image">
+        <form id="rating-form">
+            <label for="service-rating">Rate us (1 to 5 stars):</label>
+            <select id="service-rating" class="rating-select">
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+            <label for="service-provider">Service Provider:</label>
+            <input type="text" id="service-provider" placeholder="Enter provider's name" class="input-field">
+            <button type="button" onclick="submitRating()" class="btn submit-button">Submit Rating</button>
+        </form>
+        <div id="rating-result" class="result-message"></div>
+    </div>
+
+    <!-- Platform Feedback Form -->
+    <div class="feedback-form-section">
+        <h3 class="feedback-header">Platform Feedback</h3>
+        <form id="feedback-form">
+            <label for="feedback-message">Your Feedback:</label>
+            <textarea id="feedback-message" rows="4" placeholder="Share your thoughts or suggestions" class="input-field"></textarea>
+            <button type="button" onclick="submitFeedback()" class="btn submit-button">Submit Feedback</button>
+        </form>
+        <div id="feedback-result" class="result-message"></div>
+    </div>
+
+    <!-- Admin Panel for Service Quality Monitoring -->
+    <div class="admin-panel">
+        <h3 class="admin-header">Admin Panel</h3>
+        <button onclick="viewFeedback()" class="btn admin-button">View Feedback</button>
+        <div id="admin-feedback-list" class="admin-feedback-list"></div>
+    </div>
+</section>
+
+
+     <!-- Chatbot Section -->
+<div class="chatbot-container">
+    <button class="chatbot-toggle" onclick="toggleChatbot()">💬 Chat with HEAN AI</button>
+    <div class="chatbot-window" id="chatbotWindow" style="display: none;">
+        <div class="chatbot-header">
+            <h3>HEAN AI Chatbot</h3>
+            <button onclick="toggleChatbot()">✖</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-message bot">Hello! I'm HEAN AI. How can I assist you today?</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="userInput" placeholder="Type your question here..." onkeypress="sendMessage(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+ </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: support@hean.com</p>
+            <p>Phone: +1 234 567 890</p>
+            <p>Address: 123 Health St, City, Country</p>
+        </div>
+
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#privacy-policy">Privacy Policy</a></li>
+                <li><a href="#terms-of-service">Terms of Service</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section social-media">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com" target="_blank">Facebook</a><br>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a><br>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a><br>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+
+        <div class="footer-section faq">
+            <h3>FAQ</h3>
+            <p><a href="#faq1">How do I create a health profile?</a></p>
+            <p><a href="#faq2">What services does HEAN offer?</a></p>
+            <p><a href="#faq3">How secure is my data?</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 HEAN. All rights reserved.</p>
+    </div>
+</footer>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8gDkud-080-xaEABNalRcuRDeJ_NF7Es&callback=initMap" async defer></script>
+
+<script src="script.js"></script>
+<script src="server.js"></script>
+<script src="feedback.js"></script> <!-- Link to your JavaScript file -->
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - HEAN</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Login to HEAN</h2>
+        
+        <form id="loginForm">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required>
+                <button type="button" onclick="togglePassword()">👁️</button>
+            </div>
+
+            <button type="submit" class="login">Login</button>
+            <p id="error-message" class="error-message"></p>
+        </form>
+        
+        <div class="social-login">
+            <p>Or login with:</p>
+            <button id="googleLogin" class="social-btn google" onclick="loginWithGoogle()">Login with Google</button>
+            <button id="facebookLogin" class="social-btn facebook" onclick="loginWithFacebook()">Login with Facebook</button>
+        </div>
+        
+        <p><a href="#">Forgot Password?</a></p>
+        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+    </div>
+
+    <script src="#"></script>
+</body>
+</html>

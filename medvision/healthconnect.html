@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEAN - AI-Enhanced Health Equity and Accessibility Network</title>
+    <link rel="stylesheet" href="healthconnect.css">
+    <script src="healthconnect.js" defer></script>
+</head>
+<body>
+
+<!-- Telehealth Access Section -->
+<section id="telehealth" class="feature-section">
+    <h2>Telehealth Access</h2>
+    <p>Get virtual consultations with healthcare professionals.</p>
+    <button class="btn primary-btn" id="accessTelehealthBtn">Access Telehealth Services</button>
+    <div id="telehealth-info" class="info-box"></div>
+</section>
+
+<!-- Modal for Scheduling Appointments -->
+<div id="scheduleModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <h2>Schedule Telehealth Appointment</h2>
+        <label for="doctorSelect">Choose a doctor:</label>
+        <select id="doctorSelect">
+            <option value="Doctor A">Doctor A - Available Now</option>
+            <option value="Doctor B">Doctor B - Available Now</option>
+            <option value="Doctor C">Doctor C - Schedule a time</option>
+        </select>
+        <br><br>
+        <label for="appointmentDate">Select Date and Time:</label>
+        <input type="datetime-local" id="appointmentDate">
+        <br><br>
+        <button id="scheduleBtn" class="btn primary-btn">Schedule Appointment</button>
+    </div>
+</div>
+
+<!-- Local Clinics Section -->
+<section id="local-clinics" class="feature-section">
+    <h2>Find Local Clinics</h2>
+    <p>Locate nearby healthcare facilities based on your location.</p>
+    <button class="btn primary-btn" onclick="findLocalClinics()">Find Clinics Near Me</button>
+    <div id="clinics-info" class="info-box"></div>
+</section>
+
+<!-- Transportation Services Section -->
+<section id="transportation" class="feature-section">
+    <h2>Transportation Services</h2>
+    <p>Get assistance with transportation to healthcare facilities.</p>
+    <button class="btn primary-btn" onclick="findTransportation()">Find Transportation Services</button>
+    <div id="transportation-info" class="info-box"></div>
+</section>
+<!-- Social Support Network Section -->
+<section id="support-network" class="feature-section">
+    <h2>Social Support Network</h2>
+    <p>Connect with local social support groups and resources.</p>
+    <button class="btn primary-btn" onclick="accessSupportNetwork()">Access Support Network</button>
+    <button class="btn secondary-btn" onclick="openForum()">Community Forum</button>
+    <button class="btn secondary-btn" onclick="openEventCalendar()">Event Calendar</button>
+    <button class="btn secondary-btn" onclick="viewResources()">Resources Page</button>
+    
+    <div id="support-info" class="info-box"></div>
+</section>
+
+<!-- Community Forum Section -->
+<section id="community-forum" class="feature-section" style="display:none;">
+    <h2>Community Forum</h2>
+    <textarea id="forumPost" placeholder="Share your thoughts or questions here..."></textarea>
+    <button class="btn primary-btn" onclick="submitForumPost()">Post</button>
+    <div id="forumPosts" class="info-box"></div>
+</section>
+
+<!-- Event Calendar Section -->
+<section id="event-calendar" class="feature-section" style="display:none;">
+    <h2>Event Calendar</h2>
+    <p>Upcoming Events:</p>
+    <ul id="eventList" class="info-box"></ul>
+    <button class="btn primary-btn" onclick="addEvent()">Add Event</button>
+</section>
+
+<!-- Resources Page Section -->
+<section id="resources-page" class="feature-section" style="display:none;">
+    <h2>Resources Page</h2>
+    <p>Helpful Resources:</p>
+    <ul id="resourcesList" class="info-box">
+        <li><a href="https://www.mentalhealth.gov/" target="_blank">Mental Health Resources</a></li>
+        <li><a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank">SAMHSA Helpline</a></li>
+        <li><a href="https://www.crisistextline.org/" target="_blank">Crisis Text Line</a></li>
+    </ul>
+</section>
+
+<!-- Modal for User Submissions -->
+<div id="submissionModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeSubmissionModal">&times;</span>
+        <h2>Submit a Support Group</h2>
+        <label for="groupName">Group Name:</label>
+        <input type="text" id="groupName" placeholder="Enter Group Name" required>
+        <label for="contactInfo">Contact Information:</label>
+        <input type="text" id="contactInfo" placeholder="Enter Contact Info" required>
+        <label for="details">Details:</label>
+        <textarea id="details" placeholder="Enter Group Details" required></textarea>
+        <button id="submitGroup" class="btn primary-btn" onclick="submitGroup()">Submit</button>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <p>&copy; 2024 HEAN. All rights reserved.</p>
+    </div>
+</footer>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8gDkud-080-xaEABNalRcuRDeJ_NF7Es&libraries=places"></script>
+
+</body>
+</html>

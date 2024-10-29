@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HEAN</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>HEAN Dashboard</h1>
+        <nav>
+            <button id="communityLeadersBtn" onclick="showSection('communityLeaders')">Community Leaders</button>
+            <button id="healthCareProvidersBtn" onclick="showSection('healthCareProviders')">Healthcare Providers</button>
+            <button id="usersBtn" onclick="showSection('users')">User Profile</button>
+        </nav>
+    </header>
+    
+    <main id="dashboardContent">
+        <div id="communityLeaders" class="dashboard-section" style="display: none;">
+            <h2>Community Leaders Dashboard</h2>
+            <p>Please enter your Community Leadership ID to access this section:</p>
+            <input type="text" id="communityLeaderId" placeholder="Enter your ID (e.g., 123456789)" />
+            <button onclick="accessCommunityLeaders()">Access</button>
+            <p id="communityLeaderMessage"></p>
+            <div id="communityLeaderFeatures" style="display: none;">
+                <h3>Community Leader's Features</h3>
+                <ul>
+                    <li><a href="#" onclick="showFeature('profileManagement')">Profile Management</a></li>
+                    <li><a href="#" onclick="showFeature('communityEngagement')">Community Engagement</a></li>
+                    <li><a href="#" onclick="showFeature('healthResources')">Health Resources</a></li>
+                    <li><a href="#" onclick="showFeature('messaging')">Messaging</a></li>
+                    <li><a href="#" onclick="showFeature('eventManagement')">Event Management</a></li>
+                    <li><a href="#" onclick="showFeature('supportServices')">Support Services</a></li>
+                    <li><a href="#" onclick="showFeature('surveys')">Surveys</a></li>
+                    <li><a href="#" onclick="showFeature('notifications')">Notifications</a></li>
+                    <li><a href="#" onclick="showFeature('healthTracking')">Health Tracking Tools</a></li>
+                    <li><a href="#" onclick="showFeature('volunteering')">Volunteer Opportunities</a></li>
+                    <li><a href="#" onclick="showFeature('emergencyContacts')">Emergency Contacts</a></li>
+                    <li><a href="#" onclick="showFeature('feedback')">Feedback</a></li>
+                    <li><a href="#" onclick="showFeature('privacySettings')">Privacy Settings</a></li>
+                </ul>
+                <div id="profileManagement" class="feature-section" style="display:none;">
+                    <h4>Profile Management</h4>
+                    <p>Manage your profile information.</p>
+                </div>
+                <!-- Additional feature sections here... -->
+            </div>
+            <img src="images/community-leaders.jpg" width="500px" alt="Community Leaders" />
+        </div>
+
+        <div id="healthCareProviders" class="dashboard-section" style="display: none;">
+            <h2>Healthcare Providers Dashboard</h2>
+            <p>Please enter your Healthcare Provider ID to access this section:</p>
+            <input type="text" id="healthCareProviderId" placeholder="Enter your ID (e.g., 987654321)" />
+            <button onclick="accessHealthCareProviders()">Access</button>
+            <p id="healthCareProviderMessage"></p>
+            <div id="healthCareProviderFeatures" style="display: none;">
+                <h3>Healthcare Provider's Features</h3>
+                <ul>
+                    <li><a href="#" onclick="showFeature('patientManagement')">Patient Management</a></li>
+                    <li><a href="#" onclick="showFeature('appointmentScheduling')">Appointment Scheduling</a></li>
+                    <li><a href="#" onclick="showFeature('billing')">Billing Management</a></li>
+                    <li><a href="#" onclick="showFeature('healthRecords')">Health Records</a></li>
+                    <li><a href="#" onclick="showFeature('telehealth')">Telehealth Services</a></li>
+                </ul>
+                <div id="patientManagement" class="feature-section" style="display:none;">
+                    <h4>Patient Management</h4>
+                    <p>Manage patient information.</p>
+                </div>
+                <!-- Additional feature sections here... -->
+            </div>
+            <img src="images/healthcare-providers.jpg" width="500px" alt="Healthcare Providers" />
+        </div>
+
+        <div id="users" class="dashboard-section" style="display: none;">
+            <h2>User Dashboard</h2>
+            <div class="user-profile">
+                <h3>Your Personal Health Profile</h3>
+                <div class="profile-photo">
+                    <img id="profileImage" src="images/user-profile.jpg" alt="Profile Photo" />
+                    <input type="file" accept="image/*" onchange="previewImage(event)" />
+                </div>
+                <div class="profile-info">
+                    <label for="userName">Name:</label>
+                    <input type="text" id="userName" placeholder="Enter your name" />
+                    
+                    <label for="userAge">Age:</label>
+                    <input type="number" id="userAge" placeholder="Enter your age" />
+                    
+                    <label for="healthHistory">Health History:</label>
+                    <textarea id="healthHistory" placeholder="Enter your health history"></textarea>
+                    
+                    <label for="allergies">Allergies:</label>
+                    <textarea id="allergies" placeholder="Enter your allergies"></textarea>
+                    
+                    <label for="medications">Medications:</label>
+                    <textarea id="medications" placeholder="Enter your medications"></textarea>
+                </div>
+                <button onclick="editProfile()">Edit Profile</button>
+                <button onclick="saveProfile()">Save Profile</button>
+            </div>
+            <img src="images/user-profile.jpg" width="500px" alt="User Profile" />
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HEAN. All rights reserved.</p>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
